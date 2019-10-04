@@ -182,6 +182,14 @@ endif()
    set_target_properties(CsMultimedia_gst_audiodecoder${BUILD_ABI} PROPERTIES PREFIX "")
    set_target_properties(CsMultimedia_gst_mediaplayer${BUILD_ABI} PROPERTIES PREFIX "")
 
-   install(TARGETS CsMultimedia_gst_audiodecoder${BUILD_ABI} DESTINATION ${CMAKE_INSTALL_LIBDIR})
-   install(TARGETS CsMultimedia_gst_mediaplayer${BUILD_ABI}  DESTINATION ${CMAKE_INSTALL_LIBDIR})
+   install(
+       TARGETS CsMultimedia_gst_audiodecoder${BUILD_ABI}
+       EXPORT CopperSpicePluginTargets ${INSTALL_TARGETS_DEFAULT_ARGS}
+       DESTINATION ${CMAKE_INSTALL_LIBDIR}
+    )
+   install(
+       TARGETS CsMultimedia_gst_mediaplayer${BUILD_ABI}
+       EXPORT CopperSpicePluginTargets ${INSTALL_TARGETS_DEFAULT_ARGS}
+       DESTINATION ${CMAKE_INSTALL_LIBDIR}
+    )
 endif()

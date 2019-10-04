@@ -16,4 +16,8 @@ target_compile_definitions(CsMultimedia_m3u${BUILD_ABI} PRIVATE -DIN_TRUE -DQT_P
 
 set_target_properties(CsMultimedia_m3u${BUILD_ABI} PROPERTIES PREFIX "")
 
-install(TARGETS CsMultimedia_m3u${BUILD_ABI} DESTINATION ${CMAKE_INSTALL_LIBDIR})
+install(
+    TARGETS CsMultimedia_m3u${BUILD_ABI}
+    EXPORT CopperSpicePluginTargets ${INSTALL_TARGETS_DEFAULT_ARGS}
+    DESTINATION ${CMAKE_INSTALL_LIBDIR}
+)

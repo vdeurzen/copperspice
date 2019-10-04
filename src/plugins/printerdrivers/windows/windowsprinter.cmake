@@ -38,6 +38,10 @@ if(${CMAKE_SYSTEM_NAME} MATCHES "Windows")
 
    macro_generate_resources("${PRINTERDRIVERS_WIN_SOURCES}")
 
-   install(TARGETS CsPrinterDriverWin${BUILD_ABI} DESTINATION ${CMAKE_INSTALL_LIBDIR})
+   install(
+       TARGETS CsPrinterDriverWin${BUILD_ABI}
+       EXPORT CopperSpicePluginTargets ${INSTALL_TARGETS_DEFAULT_ARGS}
+       DESTINATION ${CMAKE_INSTALL_LIBDIR}
+    )
 endif()
 

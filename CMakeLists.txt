@@ -565,6 +565,13 @@ install(
     DESTINATION ${PKG_PREFIX}
 )
 
+install(
+    EXPORT CopperSpicePluginTargets
+    NAMESPACE CopperSpice::
+    FILE CopperSpicePluginTargets.cmake
+    DESTINATION ${PKG_PREFIX}
+)
+
 message("")
 message("--")
 message(STATUS "The following CopperSpice libraries will be built:")

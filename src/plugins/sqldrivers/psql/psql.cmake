@@ -32,5 +32,9 @@ if(WITH_PSQL_PLUGIN AND PostgreSQL_FOUND)
 
     target_compile_definitions(CsSqlPsql${BUILD_ABI} PRIVATE -DIN_TRUE -DQT_PLUGIN)
 
-    install(TARGETS CsSqlPsql${BUILD_ABI} DESTINATION ${CMAKE_INSTALL_LIBDIR})
+    install(
+        TARGETS CsSqlPsql${BUILD_ABI}
+        EXPORT CopperSpicePluginTargets ${INSTALL_TARGETS_DEFAULT_ARGS}
+        DESTINATION ${CMAKE_INSTALL_LIBDIR}
+    )
 endif()

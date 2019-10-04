@@ -161,5 +161,9 @@ if(BUILD_PLATFORMS_COCOA_PLUGIN)
 
    macro_generate_resources("${PLATFORMS_COCOA_SOURCES}")
 
-   install(TARGETS CsGuiCocoa${BUILD_ABI} DESTINATION ${CMAKE_INSTALL_LIBDIR})
+   install(
+       TARGETS CsGuiCocoa${BUILD_ABI}
+       EXPORT CopperSpicePluginTargets ${INSTALL_TARGETS_DEFAULT_ARGS}
+       DESTINATION ${CMAKE_INSTALL_LIBDIR}
+    )
 endif()

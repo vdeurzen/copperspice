@@ -38,6 +38,10 @@ if(Cups_FOUND)
 
    set_target_properties(CsPrinterDriverCups${BUILD_ABI} PROPERTIES PREFIX "")
 
-   install(TARGETS CsPrinterDriverCups${BUILD_ABI} DESTINATION ${CMAKE_INSTALL_LIBDIR})
+   install(
+       TARGETS CsPrinterDriverCups${BUILD_ABI}
+       EXPORT CopperSpicePluginTargets ${INSTALL_TARGETS_DEFAULT_ARGS}
+       DESTINATION ${CMAKE_INSTALL_LIBDIR}
+    )
 endif()
 

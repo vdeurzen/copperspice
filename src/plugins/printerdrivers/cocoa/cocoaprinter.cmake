@@ -33,5 +33,9 @@ if(${CMAKE_SYSTEM_NAME} MATCHES "Darwin")
 
    macro_generate_resources("${PRINTERDRIVERS_COCOA_SOURCES}")
 
-   install(TARGETS CsPrinterDriverCocoa${BUILD_ABI} DESTINATION ${CMAKE_INSTALL_LIBDIR})
+   install(
+       TARGETS CsPrinterDriverCocoa${BUILD_ABI}
+       EXPORT CopperSpicePluginTargets ${INSTALL_TARGETS_DEFAULT_ARGS}
+       DESTINATION ${CMAKE_INSTALL_LIBDIR}
+    )
 endif()

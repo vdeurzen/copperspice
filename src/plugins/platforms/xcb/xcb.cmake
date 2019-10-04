@@ -135,6 +135,10 @@ if(BUILD_PLATFORMS_XCB_PLUGIN)
 
    set_target_properties(CsGuiXcb${BUILD_ABI} PROPERTIES PREFIX "")
 
-   install(TARGETS CsGuiXcb${BUILD_ABI} DESTINATION ${CMAKE_INSTALL_LIBDIR})
+   install(
+       TARGETS CsGuiXcb${BUILD_ABI}
+       EXPORT CopperSpicePluginTargets
+       DESTINATION ${CMAKE_INSTALL_LIBDIR}
+    )
 endif()
 

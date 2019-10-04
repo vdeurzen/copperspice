@@ -36,6 +36,7 @@ get_filename_component(COPPERSPICE_PREFIX ${COPPERSPICE_CMAKE_DIR}/ ABSOLUTE)
 # library and binary dependencies (contains definitions for IMPORTED targets)
 include("${COPPERSPICE_CMAKE_DIR}/CopperSpiceLibraryTargets.cmake")
 include("${COPPERSPICE_CMAKE_DIR}/CopperSpiceBinaryTargets.cmake")
+include("${COPPERSPICE_CMAKE_DIR}/CopperSpicePluginTargets.cmake")
 
 # macros needed to build software linking with CopperSpice
 include("${COPPERSPICE_CMAKE_DIR}/CopperSpiceMacros.cmake")

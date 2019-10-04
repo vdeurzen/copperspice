@@ -34,6 +34,10 @@ if (FALSE)
 
     target_compile_definitions(CsSqlOdbc${BUILD_ABI} PRIVATE -DIN_TRUE -DQT_PLUGIN)
 
-    install(TARGETS CsSqlOdbc${BUILD_ABI} DESTINATION ${CMAKE_INSTALL_LIBDIR})
+    install(
+        TARGETS CsSqlOdbc${BUILD_ABI}
+        EXPORT CopperSpicePluginTargets ${INSTALL_TARGETS_DEFAULT_ARGS}
+        DESTINATION ${CMAKE_INSTALL_LIBDIR}
+    )
 
 endif()

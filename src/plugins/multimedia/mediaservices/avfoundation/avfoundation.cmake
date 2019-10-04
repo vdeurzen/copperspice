@@ -87,5 +87,9 @@ if(WITH_MULTIMEDIA AND ${CMAKE_SYSTEM_NAME} MATCHES "Darwin")
 
    set_target_properties(CsMultimedia_avf_mediaplayer${BUILD_ABI} PROPERTIES PREFIX "")
 
-   install(TARGETS CsMultimedia_avf_mediaplayer${BUILD_ABI}  DESTINATION ${CMAKE_INSTALL_LIBDIR})
+   install(
+       TARGETS CsMultimedia_avf_mediaplayer${BUILD_ABI}
+       EXPORT CopperSpicePluginTargets ${INSTALL_TARGETS_DEFAULT_ARGS}
+       DESTINATION ${CMAKE_INSTALL_LIBDIR}
+    )
 endif()

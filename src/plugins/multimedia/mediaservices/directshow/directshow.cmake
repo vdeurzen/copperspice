@@ -75,5 +75,9 @@ if(${CMAKE_SYSTEM_NAME} MATCHES "Windows")
        -DNO_DSHOW_STRSAFE
     )
 
-    install(TARGETS CsMultimedia_DirectShow${BUILD_ABI} DESTINATION ${CMAKE_INSTALL_LIBDIR})
+    install(
+        TARGETS CsMultimedia_DirectShow${BUILD_ABI}
+        EXPORT CopperSpicePluginTargets ${INSTALL_TARGETS_DEFAULT_ARGS}
+        DESTINATION ${CMAKE_INSTALL_LIBDIR}
+    )
 endif()

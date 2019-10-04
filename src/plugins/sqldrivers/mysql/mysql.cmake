@@ -33,5 +33,9 @@ if(WITH_MYSQL_PLUGIN AND MYSQL_FOUND)
 
     target_compile_definitions(CsSqlMySql${BUILD_ABI} PRIVATE -DIN_TRUE -DQT_PLUGIN)
 
-    install(TARGETS CsSqlMySql${BUILD_ABI} DESTINATION ${CMAKE_INSTALL_LIBDIR})
+    install(
+        TARGETS CsSqlMySql${BUILD_ABI}
+        EXPORT CopperSpicePluginTargets ${INSTALL_TARGETS_DEFAULT_ARGS}
+        DESTINATION ${CMAKE_INSTALL_LIBDIR}
+    )
 endif()
